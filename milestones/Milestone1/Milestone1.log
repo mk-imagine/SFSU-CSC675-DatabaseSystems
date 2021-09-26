@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.19)  11 SEP 2021 18:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=pdflatex 2021.8.19)  26 SEP 2021 09:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -44,51 +44,127 @@ File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 (./Milestone1.aux)
 \openout1 = `Milestone1.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
-LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 31.
+(Font)              <12> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 31.
+(Font)              <8> on input line 39.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 31.
+(Font)              <6> on input line 39.
  [1
 
 {/usr/local/texlive/2021/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Mile
-stone1.toc)
+stone1.toc
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 3.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 3.
+)
 \tf@toc=\write3
 \openout3 = `Milestone1.toc'.
 
- [1] [2] (./Milestone1.aux) ) 
+ [1] [2]
+Overfull \hbox (449.7245pt too wide) in paragraph at lines 65--75
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--75
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 65--75
+
+ []
+
+
+Overfull \hbox (449.7245pt too wide) in paragraph at lines 77--87
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--87
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 77--87
+
+ []
+
+
+Overfull \hbox (449.7245pt too wide) in paragraph at lines 89--99
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--99
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--99
+
+ []
+
+
+Overfull \hbox (449.7245pt too wide) in paragraph at lines 101--111
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--111
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--111
+
+ []
+
+
+Overfull \hbox (449.7245pt too wide) in paragraph at lines 113--122
+[][] 
+ []
+
+[3] [4]
+Overfull \hbox (1.75055pt too wide) in paragraph at lines 211--212
+[]\OT1/cmr/m/n/10 The ac-count-ing dept shall re-cieve pay-ment from many Pay-m
+ent Types 
+ []
+
+[5] [6] [7] [8] (./Milestone1.aux) ) 
 Here is how much of TeX's memory you used:
- 717 strings out of 478542
- 11215 string characters out of 5850387
- 309480 words of memory out of 5000000
- 18719 multiletter control sequences out of 15000+600000
+ 722 strings out of 478542
+ 11296 string characters out of 5850387
+ 318381 words of memory out of 5000000
+ 18724 multiletter control sequences out of 15000+600000
  408598 words of font info for 44 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 34i,6n,41p,965b,250s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2021/texmf-dist/fonts/type1/pu
-blic/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/publ
-ic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr12.pfb>
-Output written on Milestone1.pdf (3 pages, 65606 bytes).
+ 34i,6n,41p,826b,260s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2021/texmf-dist/fonts/t
+ype1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2021/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2021/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2021/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmr12.pfb>
+Output written on Milestone1.pdf (9 pages, 81432 bytes).
 PDF statistics:
- 34 PDF objects out of 1000 (max. 8388607)
- 20 compressed objects within 1 object stream
+ 54 PDF objects out of 1000 (max. 8388607)
+ 34 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -9,6 +9,14 @@
 {Section \thesection:} % label
 {0.5em}{}
 
+\renewcommand\thesubsection{\Alph{subsection}}
+\titleformat{\subsection}
+[hang]
+{\normalfont\bfseries}
+{}{0em}{}
+
+\titlespacing{\subsection}{1.5em}{0em}{0em}
+
 \begin{document}
 
 \begin{titlepage}
@@ -32,7 +40,7 @@
 		\hline
 		\textbf{Milestone/Version} & \textbf{Date}\\
 		\hline
-		M1V1 & 09/11/2020\\
+		M1V1 & 09/11/2021\\
 		\hline
 	\end{tabular}
 
@@ -43,11 +51,340 @@
 \pagebreak
 
 \section{Project Description}
-This database system manages all aspects of online retail operations from product acquisition and warehousing, to customer order fulfillment and followup.  Vendors or manufacturers from which the online retailer will purchase product for resale will be managed.  This includes all relevant data that involves order details such as order quantities, cost, fulfillment status, invoicing, purchase history etc.  Similarly, vendor data such as location, contact information, supply capacity, etc.  Internal operations shall be managed as well.  These operations include, but is not limited to, inventory management, customer order fulfillment, human resources, and capital resources.  To complete the product lifecycle, customer relationship management will be an integral part of the database.  Each customer will be tracked, with contact information, purchase history, communication history, product reviews, browsing history, etc.
+The goal of this project is to design and implement an online retail database that functions similarly to the online portals of major retailers such as Walmart, The Home Depot, and Amazon.  This database system is to manage all aspects of online retail operations from product acquisition and warehousing, to customer order fulfillment and followup.  By implementing this database, the online retailer will be able to better understand product turnover, supply chain, human resourcing, fulfillment efficiency, and many other key performance indicators.
 
+From the vendor side of the business, the database will manage the supply chain.  This will allow the business to ensure that its resources are applied as efficiently as possible.  The business will be able to understand how long it will take for each incoming order to be fulfilled so they can plan for the correct amount of warehouse space to be allocated for each order.  Additionally, the business will be able to choose multiple different vendors to aggregate supply capacity in the case that there are supply chain breakdowns.  This will minimize the chance for an interruption in the business's ability to fulfill orders to their customers.
+
+Of course, as an online retail business, customers need to be carefully managed.  This database will facilitate the management of customer accounts, transactions, order fulfillment, and purchase habits.  By tracking these items, the business will be better equipped to manage their inventory, vendors, and sales trends.  By managing customer transactions, the business will be able to make informed decisions about how to manage its supply chain; the business will know how much of each product to order from its vendors.  As an added value to customers, the database will also allow customers to comment and review the products they order and their general experience with the business.
+
+Lastly, and possibly most importantly, this project will manage internal operations.  This includes, but is not limited to, inventory management, warehousing and distribution, human resources and capital resources.  With this system, the business will be able to manage its staffing requirements and responsibilities, which warehouses to use when fulfilling customer orders, management and administrative hierarchy, and working capital.  This will allow the business to maintain smooth operations by ensuring proper staffing at all of its locations.  Furthermore, the business will be able to resource its distribution network to ensure timely and efficient fulfillment of orders.  Finally, the database will be able to support multiple roles for employees to ensure a separation of duties.
+
+\pagebreak
 \section{Use Cases}
+\subsection{Use Case 1}
+\begin{tabular}{ | l | l | }
+\hline
+\textbf{Title} & Product Purchase from Website\\
+\hline
+\textbf{Actors} &	Customer (Jane)	\\
+\hline
+\textbf{Description} & Jane is someone who is looking for a new thingamadoodad.  She is not happy with the last one she bought since it lacks the feature set she wants.  While she is\\
+\hline
+\end{tabular}
+\hfill\\
+
+\subsection{Use Case 2}
+\begin{tabular}{ | l | l | }
+\hline
+\textbf{Title} & Product Purchase from Website\\
+\hline
+\textbf{Actors} &	Customer (Jane)	\\
+\hline
+\textbf{Description} & Jane is someone who is looking for a new thingamadoodad.  She is not happy with the last one she bought since it lacks the feature set she wants.  While she is\\
+\hline
+\end{tabular}
+\hfill\\
+
+\subsection{Use Case 3}
+\begin{tabular}{ | l | l | }
+\hline
+\textbf{Title} & Product Purchase from Website\\
+\hline
+\textbf{Actors} &	Customer (Jane)	\\
+\hline
+\textbf{Description} & Jane is someone who is looking for a new thingamadoodad.  She is not happy with the last one she bought since it lacks the feature set she wants.  While she is\\
+\hline
+\end{tabular}
+\hfill\\
+
+\subsection{Use Case 4}
+\begin{tabular}{ | l | l | }
+\hline
+\textbf{Title} & Product Purchase from Website\\
+\hline
+\textbf{Actors} &	Customer (Jane)	\\
+\hline
+\textbf{Description} & Jane is someone who is looking for a new thingamadoodad.  She is not happy with the last one she bought since it lacks the feature set she wants.  While she is\\
+\hline
+\end{tabular}
+\hfill\\
+
+\subsection{Use Case 5}
+\begin{tabular}{ | l | l | }
+\hline
+\textbf{Title} & Product Purchase from Website\\
+\hline
+\textbf{Actors} &	Customer (Jane)	\\
+\hline
+\textbf{Description} & Jane is someone who is looking for a new thingamadoodad.  She is not happy with the last one she bought since it lacks the feature set she wants.  While she is\\
+\hline
+\end{tabular}
 
 \section{Database Requirements}
+
+\begin{enumerate}
+
+\item General User (Strong)
+\begin{enumerate}
+	\item A user shall create only one account with an unique email.
+	\item A user shall be able to register to many mailing lists
+	\item A user shall have many shipping addresses
+	\item A user shall have many billing addresses
+	\item A user shall have many transactions
+	\item A user shall have one shopping cart
+	\item A user shall receive many receipts
+\end{enumerate}
+	
+\item Registered User (Strong)
+\begin{enumerate}
+	\item A registered user is a user.
+	\item A registered user shall be allowed to login to their account from many supported devices simultaneously.
+	\item A registered user shall be able to create only one basic account
+	\item A registered user shall be able to create only one premium account
+	\item A registered user shall have a favorites list
+\end{enumerate}
+
+\item Order Status
+\begin{enumerate}
+	\item An order status shall have one Registered User
+\end{enumerate}
+	
+\item Device (Strong)
+\begin{enumerate}
+	\item A device shall log into zero or one account
+	\item A device shall be used by many registered users
+\end{enumerate}
+
+\item Account
+\begin{enumerate}
+	\item An account shall be created by one and only one user
+	\item An account is a Basic Account
+	\item An account is a Premium Account
+	\item An account shall be logged into by many devices
+	\item An account shall accrue many rewards
+\end{enumerate}
+	
+\item Basic Account
+\begin{enumerate}
+	\item A Basic account is an account
+\end{enumerate}
+	
+\item Premium Account
+\begin{enumerate}
+	\item A Premium account is an account
+\end{enumerate}
+
+\item Rewards Progam (Strong?)
+\begin{enumerate}
+	\item A reward shall be accrued by many accounts
+	\item A reward shall be redeemed for credit? *****
+\end{enumerate}
+	
+\item Receipt
+\begin{enumerate}
+	\item A receipt shall be received by one user
+	\item A receipt shall be created by one transaction
+	\item A receipt shall have many order statuses
+\end{enumerate}
+	
+\item Mailing List (Strong)
+\begin{enumerate}
+	\item A mailing list shall have many users
+\end{enumerate}
+
+\item Transaction (Weak)
+\begin{enumerate}
+	\item A transaction is a purchase
+	\item A transaction is a return
+	\item A transaction has at least one product
+	\item A transaction shall create a receipt
+	\item A transaction has at least one payment method
+	\item A transaction shall be created by Shopping Cart
+	\item A transaction is processed by one fulfillment center
+	\item A transaction shall create one order status
+\end{enumerate}
+	
+\item Accounting Dept (Strong?)
+\begin{enumerate}
+	\item The accounting dept shall recieve payment from many Payment Types
+	\item The accounting dept shall pay many Vendors
+	\item The accounting dept shall pay many Employees
+\end{enumerate}
+	
+\item Fulfillment center (Strong)
+\begin{enumerate}
+	\item Fulfillment center processes transaction
+	\item Fulfillment center sends order to many distribution networks
+\end{enumerate}
+	
+\item Return
+\begin{enumerate}
+	\item A return is a transaction
+	\item A return has one warehouse address
+\end{enumerate}
+
+\item Purchase
+\begin{enumerate}
+	\item A purchase is a transaction
+	\item A purchase has one shipping address
+\end{enumerate}
+
+\item Shopping Cart
+\begin{enumerate}
+	\item A shopping cart shall have many users
+	\item A shopping cart shall have many products
+	\item A shopping cart shall have at most one shipping address
+	\item A shopping cart shall have many payment methods
+	\item A shopping cart creates one transaction
+\end{enumerate}
+
+\item Favorites List
+\begin{enumerate}
+	\item A favorites list shall have many registered users
+	\item A favorites list shall have many products
+\end{enumerate}
+
+\item Address (Strong)
+\begin{enumerate}
+	\item A address is a billing address
+	\item A address is a shipping address
+	\item A address is an employee's address
+\end{enumerate}
+	
+\item Billing Address
+\begin{enumerate}
+	\item A billing address is an address
+	\item A billing address has a payment method
+	\item A billing address has many general users.
+\end{enumerate}
+	
+\item Shipping Address
+\begin{enumerate}
+	\item A shipping address has one region
+	\item A shipping address is an address
+	\item A shipping address has many general users
+	\item A shipping address is shipped to by one distribution network
+\end{enumerate}
+	
+\item Employee Address
+\begin{enumerate}
+	\item A employee's address is an address
+	\item A employee's address has many employees
+\end{enumerate}
+	
+\item Employee
+\begin{enumerate}
+	\item A employee has at least one address
+	\item A employee is a warehouse worker
+	\item A employee is a manager
+	\item A employee is a buyer
+	\item A employee is paid by one payroll company
+\end{enumerate}
+
+\item Warehouse Worker
+\begin{enumerate}
+	\item A warehouse worker is an employee
+	\item A warehouse worker works in one warehouse
+\end{enumerate}
+
+\item Manager
+\begin{enumerate}
+	\item A manager is an employee
+	\item A manager manages many employees
+\end{enumerate}
+
+\item Buyer
+\begin{enumerate}
+	\item A buyer is an employee
+\end{enumerate}
+	
+\item Payroll Company (Strong)
+\begin{enumerate}
+	\item Payroll company pays many employees
+\end{enumerate}
+
+\item Payment method (Strong)
+\begin{enumerate}
+	\item A payment method pays for one transaction at a time
+	\item A payment method is a Debit Card
+	\item A payment method is a Credit Card
+\end{enumerate}
+
+\item Vendor (Strong)
+\begin{enumerate}
+	\item A vendor sends product to many warehouses
+	\item A vendor has at least one region
+	\item A vendor creates many invoices
+\end{enumerate}
+	
+\item Region (Strong)
+\begin{enumerate}
+	\item A region has many shipping addresses
+	\item A region has many vendors
+	\item A region has one warehouse
+\end{enumerate}
+	
+\item Invoices
+\begin{enumerate}
+	\item A invoice is created by many vendors
+	\item A invoice is sent to many warehouses
+\end{enumerate}
+	
+\item Distribution Network
+\begin{enumerate}
+	\item A distribution network uses many shipping companies
+	\item A distribution network has one region
+	\item A distribution network has many warehouses
+	\item A distribution network ships to many addresses
+	\item A distribution network receives order from one fulfillment center
+\end{enumerate}
+	
+\item Warehouse (weak?)
+\begin{enumerate}
+	\item A warehouse has one distribution network (could be region?)
+	\item A warehouse contains many products
+	\item A warehouse is request from many vendors
+	\item A warehouse receives many invoices
+	\item A warehouse has many warehouse workers
+	\item A warehouse has many managers
+\end{enumerate}
+
+\item Courier (Strong)
+\begin{enumerate}
+	\item A courier is used by many distribution networks
+\end{enumerate}
+
+\item Product (Strong)
+\begin{enumerate}
+	\item A product is ordered in many transactions
+	\item A product is contained by many warehouses
+	\item A product is contained by many shopping carts
+	\item A product is contained by many favorites lists
+	\item A product has many product reviews
+	\item A product has many categories
+\end{enumerate}
+	
+\item Debit Card
+\begin{enumerate}
+	\item A debit card is a payment method
+\end{enumerate}
+	
+\item Credit card
+\begin{enumerate}
+	\item A credit card is a payment method
+\end{enumerate}
+
+\item DB System (Strong)
+\begin{enumerate}
+	\item DB system monitors everything
+\end{enumerate}
+
+\item Category (Strong)
+\begin{enumerate}
+	\item A category has many products
+\end{enumerate}
+
+\end{enumerate}
 
 \section{Detailed List of Main Entities, Attributes and Keys}
 
