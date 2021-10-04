@@ -3,9 +3,9 @@
 \contentsline {subsection}{\numberline {A}Use Case 1}{3}{}%
 \contentsline {subsection}{\numberline {B}Use Case 2}{3}{}%
 \contentsline {subsection}{\numberline {C}Use Case 3}{3}{}%
-\contentsline {subsection}{\numberline {D}Use Case 4}{3}{}%
-\contentsline {subsection}{\numberline {E}Use Case 5}{3}{}%
-\contentsline {section}{\numberline {III}Database Requirements}{3}{}%
-\contentsline {section}{\numberline {IV}Detailed List of Main Entities, Attributes and Keys}{8}{}%
-\contentsline {section}{\numberline {V}Entity Relationship Diagram (ERD)}{8}{}%
-\contentsline {section}{\numberline {VI}Testing Table}{8}{}%
+\contentsline {subsection}{\numberline {D}Use Case 4}{4}{}%
+\contentsline {subsection}{\numberline {E}Use Case 5}{4}{}%
+\contentsline {section}{\numberline {III}Database Requirements}{6}{}%
+\contentsline {section}{\numberline {IV}Detailed List of Main Entities, Attributes and Keys}{10}{}%
+\contentsline {section}{\numberline {V}Entity Relationship Diagram (ERD)}{14}{}%
+\contentsline {section}{\numberline {VI}Testing Table}{15}{}%
