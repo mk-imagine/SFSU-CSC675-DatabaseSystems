@@ -1,5 +1,13 @@
 \documentclass{article}
-\usepackage{titlesec, geometry, setspace, enumitem, longtable, pdfpages}
+\usepackage{titlesec, geometry, setspace, enumitem, longtable, pdfpages, hyperref}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 
 \doublespacing
 
@@ -493,9 +501,9 @@ Lastly, and possibly most importantly, this project will manage internal operati
 
 \section{Testing Table}
 
-\begin{longtable}{ | c | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.07\linewidth} | p{0.3\linewidth} | }
+\begin{longtable}{ | c | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | }
 	\hline
-	Rule & Entity A & Relation & Entity B & Cardinality & Pass/Fail & Error Description\\\hline
+	Rule & Entity A & Relation & Entity B & Cardinality & Pass/Fail & Error Description\\\hline\endhead
 	1	 & General User & Create & Account & 1-to-1 & Pass & None \\\hline
 	2	 & General User	& User Address Info & Address	& M-to-M	& Pass	& None \\\hline
 	3	 & General User & User Payment Info	& Payment Method	& M-to-M	& Fail & A payment method should be associated with at most one user.  If a payment method can be associated with several users, there could be security issues.\\\hline
