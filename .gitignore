@@ -1,7 +1,7 @@
 .DS_Store
-.aux
-.log
-.synctex.gz
-.toc
-.drawio.pdf
-.out
+# .aux
+# .log
+# .synctex.gz
+# .toc
+# .drawio.pdf
+# .out
