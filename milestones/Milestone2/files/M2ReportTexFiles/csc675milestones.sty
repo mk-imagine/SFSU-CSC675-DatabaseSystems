@@ -1,0 +1,42 @@
+\ProvidesPackage{csc675milestones}
+
+\usepackage{titlesec, geometry, setspace, enumitem, longtable, pdfpages, hyperref,import,setspace, tocloft}
+
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\doublespacing
+
+\geometry{
+letterpaper,
+textwidth=6.5in,
+textheight=9in
+}
+
+\setlist{nosep}
+
+%\let\oldsection\section
+%\renewcommand\section{\clearpage\oldsection}
+\setlength{\cftsecnumwidth}{2.75em}
+\setlength{\cftsubsecindent}{2.75em}
+
+\renewcommand{\thesection}{\Roman{section}}
+\titleformat
+{\section}
+[hang]
+{\bfseries\Large}
+{Section \thesection:} % label
+{0.5em}{}
+
+\renewcommand\thesubsection{\Alph{subsection}}
+\titleformat{\subsection}
+[hang]
+{\large\bfseries}
+{}{-1.1em}{}
+
+\titlespacing{\subsection}{1.5em}{0em}{0em}

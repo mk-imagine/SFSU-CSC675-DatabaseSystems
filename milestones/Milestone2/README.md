@@ -1,4 +1,8 @@
-# Milestone 2: The Relational Model 
+# Milestone 1: The Semantic-Conceptual Mode -- CHANGES MADE
+
+ERD completely redone.  Please review and regrade accordingly.  Thank you!
+
+# Milestone 2: The Relational Model
 
 The goal of this milestone is to create a complete technical document that will define in detail the logical 
 design and architecture of your database system. Note that this milestone is a professional document that is read by 
