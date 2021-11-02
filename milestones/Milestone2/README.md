@@ -1,6 +1,6 @@
 # Milestone 1: The Semantic-Conceptual Mode -- CHANGES MADE
 
-ERD completely redone.  Please review and regrade accordingly.  Thank you!
+ERD completely redone from scratch; almost nothing from the original has been kept.  Please review and regrade accordingly.  Thank you!
 
 # Milestone 2: The Relational Model
 

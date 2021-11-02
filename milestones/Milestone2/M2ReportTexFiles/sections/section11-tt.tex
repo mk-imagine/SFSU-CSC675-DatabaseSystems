@@ -30,7 +30,7 @@ package						&	DELETE		&	Pass		&	None							&	None				\\\hline
 package						&	UPDATE		&	Pass		&	None							&	None				\\\hline
 courier						&	DELETE		&	Pass		&	None							&	None				\\\hline
 courier						&	UPDATE		&	Pass		&	None							&	None				\\\hline
-region						&	DELETE		&	Pass		&	FK constraint fails (restrict)	&	Need to create trigger or procedure to deal with this error\\\hline
+region						&	DELETE		&	Fail		&	FK constraint fails (restrict)	&	Need to create trigger or procedure to deal with this error\\\hline
 region						&	UPDATE		&	Pass		&	None							&	None				\\\hline
 inventory					&	DELETE		&	Pass		&	None							&	None				\\\hline
 inventory					&	UPDATE		&	Pass		&	None							&	None				\\\hline
@@ -77,7 +77,7 @@ orderFulfillment			&	UPDATE		&	Pass		&	None							&	None				\\\hline
 shipment					&	DELETE		&	Pass		&	None							&	None				\\\hline
 shipment					&	UPDATE		&	Pass		&	None							&	None				\\\hline
 packagesForFulfillment		&	DELETE		&	Pass		&	None							&	None				\\\hline
-packagesForFulfillment		&	UPDATE		&	Pass		&	FK constraint fails (set null)	&	Need to create trigger or procedure to deal with this error\\\hline
+packagesForFulfillment		&	UPDATE		&	Fail		&	FK constraint fails (set null)	&	Need to create trigger or procedure to deal with this error\\\hline
 actionOrigin				&	DELETE		&	Pass		&	None							&	None				\\\hline
 actionOrigin				&	UPDATE		&	Pass		&	None							&	None				\\\hline
 warehouse					&	DELETE		&	Pass		&	None							&	None				\\\hline
