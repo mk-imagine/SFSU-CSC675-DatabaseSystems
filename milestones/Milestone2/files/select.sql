@@ -2,4 +2,4 @@
 
 USE OnlineRetailDB;
 
-SELECT * FROM warehouse;
+SELECT * FROM productManufacturers;

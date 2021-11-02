@@ -346,7 +346,7 @@ VALUES
 (2, 8);
 
 -- -----------------------------------------------------
--- Payment Information Methods Table Inserts
+-- Payment Information Table Inserts
 -- -----------------------------------------------------
 -- DELETE FROM paymentInfo;
 INSERT INTO paymentInfo (orderDetails, paymentMethod)
