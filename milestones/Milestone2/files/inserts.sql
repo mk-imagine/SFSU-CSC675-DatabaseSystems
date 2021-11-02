@@ -521,15 +521,3 @@ VALUES
 (3, 3, 3, 800),
 (4, 4, 2, 1500),
 (5, 5, 1, 80);
-
--- -----------------------------------------------------
--- Product Manufacturers Table Inserts
--- -----------------------------------------------------
--- DELETE FROM productManufacturers;
-INSERT INTO productManufacturers (product, manufacturer)
-VALUES
-(1, 1),
-(2, 2),
-(3, 3),
-(4, 4),
-(5, 5);

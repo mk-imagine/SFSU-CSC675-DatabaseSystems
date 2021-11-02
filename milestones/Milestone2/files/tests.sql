@@ -44,14 +44,14 @@ UPDATE shopList SET list_type = "Christmas Gifts" WHERE shoplist_id = 4;
 -- Testing Product Table
 -- -----------------------------------------------------
 
-DELETE FROM product WHERE product_id = 3;
+-- DELETE FROM product WHERE product_id = 3;
 UPDATE product SET barcode = 987654321 WHERE product_id = 4;
 
 -- -----------------------------------------------------
 -- Testing Account Type Table
 -- -----------------------------------------------------
 
-DELETE FROM accountType WHERE acctType_id = 3;
+-- DELETE FROM accountType WHERE acctType_id = 3;
 UPDATE accountType SET acctType_desc = "Bronze" WHERE acctType_id = 1;
 
 -- -----------------------------------------------------
@@ -100,7 +100,7 @@ UPDATE courier SET courier_name = "UPS SCS" WHERE courier_id = 4;
 -- Testing Region Table
 -- -----------------------------------------------------
 
-DELETE FROM region WHERE region_id = "SME";
+-- DELETE FROM region WHERE region_id = "SME";
 UPDATE region SET region_state = "WY" WHERE region_id = "MHN";
 
 -- -----------------------------------------------------
@@ -262,7 +262,7 @@ UPDATE shipment SET courier_service_level = "Turtle" WHERE tracking_number = "35
 -- -----------------------------------------------------
 
 DELETE FROM packagesForFulfillment WHERE fulfillmentAction = 3;
-UPDATE packagesForFulfillment SET shipment = "445678997" WHERE fulfillmentAction = 4;
+-- UPDATE packagesForFulfillment SET shipment = "445678997" WHERE fulfillmentAction = 4;
 
 -- -----------------------------------------------------
 -- Testing Action Origin Table
@@ -305,10 +305,3 @@ UPDATE warehouseInventoryRequest SET order_qty = 25000 WHERE invRequest_id = 4;
 
 DELETE FROM warehouseInventory WHERE wh_inventory_id = 3;
 UPDATE warehouseInventory SET warehouse_qty = 750 WHERE wh_inventory_id = 4;
-
--- -----------------------------------------------------
--- Testing Product Manufacturers Table
--- -----------------------------------------------------
-
-DELETE FROM productManufacturers WHERE product = 3;
-UPDATE productManufacturers SET manufacturer = 5 WHERE product = 4;
