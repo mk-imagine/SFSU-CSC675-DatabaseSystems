@@ -1,6 +1,8 @@
 # Milestone 1: The Semantic-Conceptual Mode -- CHANGES MADE
 
-ERD completely redone from scratch; almost nothing from the original has been kept.  Please review and regrade accordingly.  Thank you!
+ERD completely redone from scratch; almost nothing from the original has been kept.  Please review and regrade accordingly.
+
+Changes from TINYINT to BOOLEAN in databasemodel.sql.  All changes documented in report section VIII.  Thank you!!
 
 # Milestone 2: The Relational Model
 
