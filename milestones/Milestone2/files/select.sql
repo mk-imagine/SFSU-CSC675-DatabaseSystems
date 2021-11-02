@@ -2,4 +2,4 @@
 
 USE OnlineRetailDB;
 
-SELECT * FROM orderDetails;
+SELECT * FROM warehouse;

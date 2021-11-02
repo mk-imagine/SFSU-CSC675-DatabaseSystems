@@ -606,7 +606,7 @@ CREATE TABLE IF NOT EXISTS `packagesForFulfillment` (
   CONSTRAINT `PFF_SHIPMENT_FK`
     FOREIGN KEY (`shipment`)
     REFERENCES `shipment` (`tracking_number`)
-    ON DELETE SET NULL
+    ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
 

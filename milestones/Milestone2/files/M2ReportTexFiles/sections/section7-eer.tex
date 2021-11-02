@@ -13,7 +13,7 @@
 Table						& FK 				& ON DELETE & ON UPDATE & Comments\\\hline\endhead
 packagesForFulfillment 		& fulfillmentAction	& CASCADE 	& CASCADE 	& If a fulfillment action is deleted/updated, then the packages for fulfillment should be deleted/updated as well\\\hline
 packagesForFulfillment 		& package 			& CASCADE 	& CASCADE 	& If a package is deleted/updated, then the packages for fulfillment should be deleted/updated as well\\\hline
-packagesForFulfillment	 	& shipment 			& CASCADE 	& CASCADE 	& If a shipment is updated, then the packages for fulfillment should be updated as well. If a shipment is deleted, then the shipment info in packagesForFulfillment should be set to null and cust\_pickup flag set to true; this is the case where the customer chooses to pick up the order at the warehouse.\\\hline
+packagesForFulfillment	 	& shipment 			& SET NULL 	& CASCADE 	& If a shipment is updated, then the packages for fulfillment should be updated as well. If a shipment is deleted, then the shipment info in packagesForFulfillment should be set to null and cust\_pickup flag set to true; this is the case where the customer chooses to pick up the order at the warehouse.\\\hline
 actionOrigin		 		& fulfillmentAction	& CASCADE 	& CASCADE 	& If a fulfillment action is deleted/updated, then the action origin should be deleted/updated as well\\\hline
 actionOrigin		 		& region 			& RESTRICT 	& RESTRICT 	& A region should be restricted from deletion/update since the action is non-trivial.  Otherwise, many fulfillment actions associated with a particular region will end up being orphaned or changed to a region that may not be appropriate for the action.  Hence, deletion/update of a region should only occur when there is a new region that can replace it or if the region still overlaps with the previous scope.\\\hline
 warehouse			 		& region			& RESTRICT 	& RESTRICT 	& A region should be restricted from deletion/update since the action is non-trivial. Deletion/update of a region should only occur when there is a new region that can replace it or if the region still overlaps with the previous version.  Otherwise, warehouses would end up being deleted/updated along with the region. Because they are physical spaces, they cannot move if the scope of a region is changed.\\\hline
@@ -21,15 +21,15 @@ warehouseInventoryRequest	& warehouse			& CASCADE 	& CASCADE 	& A deletion/updat
 warehouseInventoryRequest	& supplier			& CASCADE 	& CASCADE 	& A deletion/update of a supplier should delete/update an inventory request.\\\hline
 warehouseInventory			& inventory			& CASCADE 	& CASCADE 	& A deletion/update of an inventory should delete/update a warehouse inventory.\\\hline
 warehouseInventory			& warehouse			& CASCADE 	& CASCADE 	& A deletion/update of a warehouse should delete/update a warehouse inventory.\\\hline
-receipt						& order				& CASCADE	& CASCADE 	& A deletion/update of an order should delete/update a receipt.\\\hline
-orderFulfillment			& order				& CASCADE	& CASCADE 	& A deletion/update of an order should delete/update an order fulfillment.\\\hline
+receipt						& orderDetails		& CASCADE	& CASCADE 	& A deletion/update of an order should delete/update a receipt.\\\hline
+orderFulfillment			& orderDetails		& CASCADE	& CASCADE 	& A deletion/update of an order should delete/update an order fulfillment.\\\hline
 orderFulfillment			& fulfillmentAction	& CASCADE	& CASCADE 	& A deletion/update of a fulfillment action should delete/update an order fulfillment.\\\hline
 shipment					& courier			& RESTRICT	& CASCADE 	& A deletion of a courier should be restricted since many shipments are associated with a particular courier.  Deletion of a courier should only occur if a replacement courier has already been considered for all shipments associated with the courier.  An update of a courier should update a shipment.\\\hline
 creditCard					& paymentMethod		& CASCADE	& CASCADE 	& A deletion/update of the payment method should delete/update the credit card.\\\hline
 bankAccount					& paymentMethod		& CASCADE	& CASCADE 	& A deletion/update of the payment method should delete/update the bank account.\\\hline
-paymentInfo					& order				& CASCADE	& CASCADE 	& A deletion/update of an order should delete/update the payment information.\\\hline
+paymentInfo					& orderDetails		& CASCADE	& CASCADE 	& A deletion/update of an order should delete/update the payment information.\\\hline
 paymentInfo					& paymentMethod		& CASCADE	& CASCADE 	& A deletion/update of a payment method should delete/update the payment information.\\\hline
-order						& shopList			& CASCADE	& CASCADE 	& A deletion/update of a shopping list should delete/update the order.\\\hline
+orderDetails				& shopList			& CASCADE	& CASCADE 	& A deletion/update of a shopping list should delete/update the order.\\\hline
 productCategories			& product			& CASCADE	& CASCADE 	& A deletion/update of a product should delete/update the product categories.\\\hline
 productCategories			& category			& CASCADE	& CASCADE 	& A deletion/update of a category should delete/update the product categories.\\\hline
 shoppingProductList			& shopList			& CASCADE	& CASCADE 	& A deletion/update of a shopList should delete/update the shopping product list.\\\hline
