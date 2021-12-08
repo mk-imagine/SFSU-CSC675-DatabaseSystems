@@ -22,8 +22,8 @@ DELIMITER ;
 
 -- Function 2: Return the name of the most expensive item on a shopping list.
 
-DELIMITER $$
 DROP FUNCTION IF EXISTS getMostExpensiveItem;
+DELIMITER $$
 CREATE FUNCTION getMostExpensiveItem (sl_id INT) RETURNS VARCHAR(100) DETERMINISTIC
 BEGIN
 	DECLARE itemName VARCHAR(100);
@@ -43,8 +43,8 @@ DELIMITER;
 -- Trigger 1: When a new orderFulfillment is inserted into the DB, a new receipt is inserted into the receipt table
 -- with the subtotal and taxes added to the receipt
 
-DELIMITER $$
 DROP TRIGGER IF EXISTS receiptInsert;
+DELIMITER $$
 CREATE TRIGGER receiptInsert AFTER INSERT ON orderDetails
 FOR EACH ROW BEGIN
 	DECLARE subtotal DECIMAL(9,2);
@@ -60,8 +60,8 @@ DELIMITER ;
 
 -- Trigger 2: When user's email is entered in, automatically enroll email in marketing mailing list.
 
-DELIMITER $$
 DROP TRIGGER IF EXISTS marketingEmailEnroll;
+DELIMITER $$
 CREATE TRIGGER marketingEmailEnroll AFTER INSERT ON email
 FOR EACH ROW BEGIN
     INSERT INTO userMailingLists (user, mailingList)
