@@ -63,25 +63,7 @@ Show the user name, the purchase total, the item name, and the item price.
 
 /user_purchTotal <purchase total>
 
-SELECT rec.receipt_id, MAX(pd.price) AS maxPrice FROM receipt rec
-JOIN orderDetails od ON od.order_id = rec.orderDetails
-JOIN shopList sl ON sl.shoplist_id = od.shoplist
-JOIN shoppingProductList spl ON spl.shoplist = sl.shoplist_id
-JOIN product pd ON pd.product_id = spl.product
-GROUP BY rec.receipt_id
-ORDER BY maxPrice DESC
-*/
-
-/*
-SELECT pd.product_name, usr.username, (
-SELECT MAX(pd.price) AS maxPrice FROM receipt rec
-JOIN orderDetails od ON od.order_id = rec.orderDetails
-JOIN shopList sl ON sl.shoplist_id = od.shoplist
-JOIN shoppingProductList spl ON spl.shoplist = sl.shoplist_id
-JOIN product pd ON pd.product_id = spl.product
-GROUP BY rec.receipt_id
-ORDER BY maxPrice DESC LIMIT 1),
-MAX(pd.price) AS mrp
+SELECT usr.username AS "Username", rec.receipt_id AS "Receipt ID", getMostExpensiveItem(sl.shoplist_id) AS "Product", MAX(pd.price) AS mrp
 FROM receipt rec
 JOIN orderDetails od ON od.order_id = rec.orderDetails
 JOIN shopList sl ON sl.shoplist_id = od.shoplist
@@ -89,50 +71,9 @@ JOIN shoppingProductList spl ON spl.shoplist = sl.shoplist_id
 JOIN product pd ON pd.product_id = spl.product
 JOIN userShopList usl ON usl.shoplist = sl.shoplist_id
 JOIN user usr ON usr.user_id = usl.user
-GROUP BY pd.product_id, usr.username
-
-
-SELECT usr.username AS "Username", MAX(pd.price) AS mrp
-FROM receipt rec
-JOIN orderDetails od ON od.order_id = rec.orderDetails
-JOIN shopList sl ON sl.shoplist_id = od.shoplist
-JOIN shoppingProductList spl ON spl.shoplist = sl.shoplist_id
-JOIN product pd ON pd.product_id = spl.product
-JOIN userShopList usl ON usl.shoplist = sl.shoplist_id
-JOIN user usr ON usr.user_id = usl.user
-GROUP BY usr.user_id
+GROUP BY usr.user_id, rec.receipt_id
 */
 
-
-/*********
-SELECT usr.username as usrname, rec.subtotal as purchTotal, MAX(pd.price) as maxPrice
-FROM shoppingProductList spl
-JOIN product pd ON pd.product_id = spl.product
-JOIN shopList sl ON sl.shoplist_id = spl.shoplist
-JOIN userShopList usl ON usl.shoplist = sl.shoplist_id
-JOIN user usr ON usr.user_id = usl.user
-JOIN orderDetails od ON od.shoplist = sl.shoplist_id
-JOIN receipt rec ON rec.orderDetails = od.order_id
-WHERE rec.subtotal > 5
-GROUP BY usr.username, rec.subtotal
-ORDER BY maxPrice DESC
-
-SELECT usr.username as usrname, rec.subtotal as purchTotal, pd.product_name, MAX(pd.price) as maxPrice
-FROM shoppingProductList spl
-JOIN product pd ON pd.product_id = spl.product
-JOIN shopList sl ON sl.shoplist_id = spl.shoplist
-JOIN userShopList usl ON usl.shoplist = sl.shoplist_id
-JOIN user usr ON usr.user_id = usl.user
-JOIN orderDetails od ON od.shoplist = sl.shoplist_id
-JOIN receipt rec ON rec.orderDetails = od.order_id
-GROUP BY usr.username, rec.subtotal, pd.product_name
-HAVING maxPrice = 
-(SELECT MAX(price) FROM product pd
-JOIN shoppingProductList spl ON spl.product = pd.product_id
-JOIN shopList sl ON sl.shoplist_id = spl.shoplist
-JOIN userShopList usl ON usl.shoplist = sl.shoplist_id
-WHERE )
-*********************/
 
 /*
 For each category, find the items that have a greater average unit price than the average unit price of the entire category. 
@@ -210,3 +151,17 @@ WHERE co.courier_name = "UPS"
 GROUP BY co.courier_name, ad.state
 ORDER BY courierCount DESC
 */
+
+/*
+DELIMITER $$
+CREATE TRIGGER acctTypeUpdate AFTER UPDATE ON account
+FOR EACH ROW BEGIN
+	DECLARE renewDate DATETIME;
+    DECLARE duration TINYINT;
+    SET duration = (SELECT acctType_duration
+		FROM account acct
+		JOIN accountType acctType ON acctType.acctType_id = acct.acctType
+		WHERE acctType.acctType_id = NEW.acctType);
+    SET renewDate = DATE_ADD(NOW(), INTERVAL duration MONTH);
+END$$
+DELIMITER ;*/
