@@ -82,6 +82,12 @@ def get_response(msg):
     else:
       count = data[1]
       response = user_dupOrders(count)
+  elif "/user_purchtotal" in command:
+    if not data[1]:
+      errors.append("No total supplied")
+    else:
+      total = data[1]
+      response = user_purchTotal(total)
   elif "/prod_catavg" in command:
     response = prod_catAvg()
   elif "/user_lastnamecat" in command:
@@ -206,8 +212,36 @@ def user_dupOrders(count):
     output = format_data(headers, rows)
     return output
 
-def user_purchTotal():
-  return
+def user_purchTotal(total):
+  con = connect()
+  rows = []
+  headers = ["Username", "Receipt ID", "Product", "Price"]
+  if con:
+    # connection alive
+    cursor = con.cursor()
+    query = """SELECT usr.username AS "Username", rec.receipt_id AS "Receipt ID", getMostExpensiveItem(sl.shoplist_id) AS "Product", MAX(pd.price) AS mrp
+                FROM receipt rec
+                JOIN orderDetails od ON od.order_id = rec.orderDetails
+                JOIN shopList sl ON sl.shoplist_id = od.shoplist
+                JOIN shoppingProductList spl ON spl.shoplist = sl.shoplist_id
+                JOIN product pd ON pd.product_id = spl.product
+                JOIN userShopList usl ON usl.shoplist = sl.shoplist_id
+                JOIN user usr ON usr.user_id = usl.user
+                GROUP BY usr.user_id, rec.receipt_id
+                HAVING mrp > %s;"""
+    variable = (total)
+    cursor.execute(query, variable)
+    data = cursor.fetchall()
+    if data:
+      for item in data:
+        row = []
+        row.append(item['Username'])
+        row.append(item['Receipt ID'][0:33])
+        row.append(item['Product'])
+        row.append(item['mrp'])
+        rows.append(row)
+    output = format_data(headers, rows)
+    return output
 
 def prod_catAvg():
   con = connect()

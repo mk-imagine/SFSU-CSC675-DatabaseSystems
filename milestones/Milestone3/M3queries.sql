@@ -72,8 +72,8 @@ JOIN product pd ON pd.product_id = spl.product
 JOIN userShopList usl ON usl.shoplist = sl.shoplist_id
 JOIN user usr ON usr.user_id = usl.user
 GROUP BY usr.user_id, rec.receipt_id
+HAVING mrp > 50;
 */
-
 
 /*
 For each category, find the items that have a greater average unit price than the average unit price of the entire category. 
