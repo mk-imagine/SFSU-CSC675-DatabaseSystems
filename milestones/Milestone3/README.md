@@ -4,7 +4,7 @@ Student ID: 918204214
 
 [Discord Server Invite Link](https://discord.gg/aPTMCPjg)
 
-[Repl app invite link](https://replit.com/join/bpabgfzmus-mkim797)
+[Repl App Invite Link](https://replit.com/join/bpabgfzmus-mkim797)
 
 ## Commands
 1. /supplier_summary <supplier_name> <price>
