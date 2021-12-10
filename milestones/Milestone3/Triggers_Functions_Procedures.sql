@@ -30,7 +30,7 @@ BEGIN
     DECLARE itemPrice DECIMAL(7,2);
     SELECT pd.product_name, pd.price INTO itemName, itemPrice
     FROM shoppingProductList spl
-    JOIN shoplist sl ON sl.shoplist_id = spl.shoplist
+    JOIN shopList sl ON sl.shoplist_id = spl.shoplist
 	JOIN orderDetails od ON od.shoplist = sl.shoplist_id
 	JOIN product pd ON pd.product_id = spl.product
     WHERE sl.shoplist_id = sl_id
