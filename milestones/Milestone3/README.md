@@ -8,15 +8,21 @@ Student ID: 918204214
 
 ## Commands
 1. /supplier_summary <supplier_name> <price>
-(e.g. /supplier_summary “Mark’s Distribution” 5.99)
-2. /wh_shipsummary <warehouse_id> <min date> <max date>
-(e.g. /wh_shipsummar 1 2021-10-31 2021-11-4)
+(e.g. /supplier_summary “Mark Distribution” 5.99)
+2. /wh_shipsummary <min date> <max date>
+(e.g. /wh_shipsummary 2021-10-31 2021-11-4)
 3. /user_dupOrders <number of orders>
+(e.g. /user_duporders 0)
 4. /user_purchTotal <purchase total>
+(e.g. /user_purchtotal 25)
 5. /prod_catAvg
+(e.g. /prod_catavg)
 6. /user_lastNameCat <last initial> <category>
+(e.g. /user_lastnamecat k Electronics)
 7. /state_TotalSales <ascending/descending>
-8. /state_CourierShip <courier> <ascending/descending> 
+(e.g. /state_totalsales ascending)
+8. /state_CourierShip <courier> <ascending/descending>
+(e.g. /state_couriership UPS ascending)
   
 ## Business Requirements
 1. Find the number of items ordered from a supplier from each warehouse that have a price greater than X.  Show the warehouse #, supplier name, item name, and item price.
