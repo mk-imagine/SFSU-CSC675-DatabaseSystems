@@ -2,7 +2,7 @@ Name: Mark Kim
 
 Student ID: 918204214
 
-[Discord Server Invite Link](https://discord.gg/aPTMCPjg)
+[Discord Server Invite Link](https://discord.gg/HQFPe2puBh)
 
 [Repl App Invite Link](https://replit.com/join/bpabgfzmus-mkim797)
 
