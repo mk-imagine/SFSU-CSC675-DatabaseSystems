@@ -237,7 +237,7 @@ def user_purchTotal(total):
         row = []
         row.append(item['Username'])
         row.append(item['Receipt ID'])
-        row.append(item['Product'][0:33])
+        row.append(item['Product'][0:25])
         row.append(item['mrp'])
         rows.append(row)
     output = format_data(headers, rows)
