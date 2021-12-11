@@ -15,7 +15,7 @@ JOIN productInventory pi ON pi.inventory = inv.inventory_id
 JOIN product pd ON pd.product_id = pi.product
 JOIN warehouseInventoryRequest wir ON wir.warehouse = wh.warehouse_id
 JOIN supplier sup ON sup.supplier_id = wir.supplier
-WHERE pd.price > 2000 AND sup.supplier_name = "Mark Distribution"-- Enter price variable here
+WHERE sup.supplier_name = "Expensive Stuff Ltd" AND pd.price > 0
 */
 
 /*
