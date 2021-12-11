@@ -143,7 +143,7 @@ def supplier_summary(supplier, price):
         row = []
         row.append(item['Warehouse No.'])
         row.append(item['Supplier'][0:10])
-        row.append(item['Product'][0:18])
+        row.append(item['Product'][0:17])
         row.append(item['Price'])
         row.append(item['Qty Ordered'])
         rows.append(row)
