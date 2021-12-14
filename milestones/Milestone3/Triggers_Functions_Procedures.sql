@@ -11,7 +11,7 @@ BEGIN
 	DECLARE subTotal DECIMAL(9,2);
 	SELECT SUM(spl.quantity * pd.price) INTO subTotal
 	FROM shoppingProductList spl
-	JOIN shoplist sl ON sl.shoplist_id = spl.shoplist
+	JOIN shopList sl ON sl.shoplist_id = spl.shoplist
 	JOIN orderDetails od ON od.shoplist = sl.shoplist_id
 	JOIN product pd ON pd.product_id = spl.product
 	WHERE sl.shoplist_id = sl_id;
@@ -40,7 +40,7 @@ BEGIN
 END $$
 DELIMITER;
 
--- Trigger 1: When a new orderFulfillment is inserted into the DB, a new receipt is inserted into the receipt table
+-- Trigger 1: When a new orderFulfillment is inserted ifnto the DB, a new receipt is inserted into the receipt table
 -- with the subtotal and taxes added to the receipt
 
 DROP TRIGGER IF EXISTS receiptInsert;
