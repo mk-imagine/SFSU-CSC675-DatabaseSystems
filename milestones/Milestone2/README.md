@@ -1,4 +1,10 @@
-# Milestone 2: The Relational Model 
+# Milestone 1: The Semantic-Conceptual Mode -- CHANGES MADE
+
+ERD completely redone from scratch; almost nothing from the original has been kept.  Please review and regrade accordingly.
+
+Changes from TINYINT to BOOLEAN in databasemodel.sql.  All changes documented in report section VIII.  Thank you!!
+
+# Milestone 2: The Relational Model
 
 The goal of this milestone is to create a complete technical document that will define in detail the logical 
 design and architecture of your database system. Note that this milestone is a professional document that is read by 

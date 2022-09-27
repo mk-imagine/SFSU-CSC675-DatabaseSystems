@@ -1,0 +1,12 @@
+\pagebreak
+\section{Forward Engineering}
+
+Due to bugs in mySQL workbench, edits were made to the databasemodel.sql file which are outlined below.\vspace{5mm}\\
+Changed TINYINT to BOOLEAN data type:
+\begin{enumerate}
+\item user.is\_Registered to BOOLEAN from TINYINT
+\item userAddresses.is\_default\_shipping to BOOLEAN from TINYINT
+\item userAddresses.is\_default\_billing to BOOLEAN from TINYINT
+\item userShopList.is\_shoppingcart to BOOLEAN from TINYINT
+\item packagesForFulfillment.cust\_pickup to BOOLEAN from TINYINT
+\end{enumerate}

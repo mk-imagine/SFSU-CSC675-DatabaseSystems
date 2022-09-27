@@ -1,0 +1,153 @@
+\pagebreak
+\section{Detailed List of Main Entities, Attributes and Keys}
+
+\begin{enumerate}
+\item General User (Strong)
+    \begin{itemize}
+        \item user\_id: key, numeric
+        \item name: composite, alphanumeric
+        \item email: alphanumeric
+        \item phone: numeric
+    \end{itemize}
+\item Registered User (Strong)
+    \begin{itemize}
+        \item registered\_user\_id: key, numeric
+        \item login: alphanumeric
+        \item account\_id: foreign key, numeric
+    \end{itemize}
+\item Address (Strong)
+    \begin{itemize}
+        \item address\_id: key, numeric
+        \item address: composite, alphanumeric
+        \item city: alphanumeric
+        \item state: alphanumeric
+        \item zip\_code: numeric
+        \item country: alphanumeric
+        \item address\_type: numeric
+    \end{itemize}
+\item Device (Strong)
+    \begin{itemize}
+        \item device\_id: key, numeric
+        \item device\_type: alphanumeric
+        \item device\_os: alphanumeric
+        \item device\_ip: numeric
+    \end{itemize}
+\item Mailing List (Strong)
+    \begin{itemize}
+        \item mailinglist\_id: key, numeric
+        \item mailinglist\_name: alphanumeric
+        \item description: alphanumeric
+        \item mailinglist\_category: alphanumeric
+    \end{itemize}
+\item Account (Weak)
+    \begin{itemize}
+        \item account\_id: key, numeric
+        \item registered\_user\_id: foreign key, numeric
+        \item account\_type: numeric
+    \end{itemize}
+\item Region (Strong)
+    \begin{itemize}
+        \item region\_id: key, numeric
+        \item location: composite, alphanumeric
+        \item service\_area: numeric
+    \end{itemize}
+\item Promotion (Strong)
+    \begin{itemize}
+        \item promotion\_id: key, numeric
+        \item promotion\_type: numeric (e.g. discount, free item, etc)
+        \item promotion\_limit: numeric (e.g. applies only once, or maximum 3 items, etc)
+    \end{itemize}
+\item Reward (Strong)
+    \begin{itemize}
+        \item reward\_id: key, numeric
+        \item reward\_type: numeric (e.g. discount, free item, etc)
+        \item reward\_limit: numeric (e.g. applies only once, or maximum 3 items, etc)
+    \end{itemize}
+\item Payment Method (Strong)
+    \begin{itemize}
+        \item payment\_id: key, numeric
+        \item billing\_address\_id: foreign key, numeric
+        \item payment\_type: alphanumeric
+    \end{itemize}
+\item Order (Weak)
+    \begin{itemize}
+        \item order\_id: key, numeric
+        \item user\_id: foreign key, numeric
+        \item shipping\_address\_id: foreign key, numeric
+        \item order\_type: numeric
+    \end{itemize}
+\item Order Details (Weak)
+    \begin{itemize}
+        \item order\_details\_id: key, numeric
+        \item order\_id: foreign key, numeric
+        \item payment\_method\_id: foreign key, numeric
+        \item receipt\_id: foreign, numeric
+    \end{itemize}
+\item Receipt (Weak)
+    \begin{itemize}
+        \item receipt\_id: key, numeric
+        \item order\_details\_id: key, numeric
+        \item receipt\_generated: timestamp
+    \end{itemize}
+\item Product (Strong)
+    \begin{itemize}
+        \item product\_id: key, numeric
+        \item UPC\_code: unique, numeric
+        \item product\_name: alphanumeric
+        \item product\_description: alphanumeric
+        \item product\_price: numeric
+        \item product\_cost: numeric
+    \end{itemize}
+\item Category (Strong)
+    \begin{itemize}
+        \item category\_id: key, numeric
+        \item category\_name: alphanumeric
+        \item category\_description: alphanumeric
+    \end{itemize}
+\item Inventory (Strong)
+    \begin{itemize}
+        \item inventory\_id: key, numeric
+        \item category\_name: alphanumeric
+        \item category\_description: alphanumeric
+    \end{itemize}
+\item Supplier (Strong)
+    \begin{itemize}
+        \item supplier\_id: key, numeric
+        \item location: multivalue, alphanumeric
+        \item description: alphanumeric
+    \end{itemize}
+\item Warehouse (Weak)
+    \begin{itemize}
+        \item warehouse\_id: key, numeric
+        \item region\_id: foreign key, numeric
+        \item location: multivalue, alphanumeric
+    \end{itemize}
+\item Fulfillment Action (Strong)
+    \begin{itemize}
+        \item fulfillment\_id: key, numeric
+        \item order\_id: foreign key, numeric
+        \item package\_dimensions: composite, numeric
+        \item package\_weight: numeric
+        \item shipping\_priority: alphanumeric
+        \item fulfillment\_status: numeric
+    \end{itemize}
+\item Courier (Strong)
+    \begin{itemize}
+        \item courier\_id: key, numeric
+        \item courier\_account\_id: alphanumeric
+        \item service\_area: alphanumeric
+        \item service\_limit: alphanumeric (e.g. maximum/minimum package size/weight)
+    \end{itemize}
+\item Accounting Dept (Strong)
+    \begin{itemize}
+        \item accounting\_dept\_id: key, numeric
+        \item order\_details\_id: foreign key, numeric
+        \item payment\_date: timestamp
+    \end{itemize}
+\item Payees (Strong)
+    \begin{itemize}
+        \item payee\_id: key, numeric
+        \item payment\_amount: numeric
+        \item payment\_status: alphanumeric
+    \end{itemize}
+\end{enumerate}

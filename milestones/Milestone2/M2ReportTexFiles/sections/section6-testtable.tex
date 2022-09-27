@@ -1,0 +1,36 @@
+\pagebreak
+\section{Testing Table}
+
+\begin{spacing}{1.25}
+\begin{longtable}{ | c | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.1\linewidth} | p{0.3\linewidth} | }
+	\caption{Entity Test}\\
+	\hline
+	Rule & Entity A & Relation & Entity B & Cardinality & Pass/Fail & Error Description\\\hline\endhead
+	1	 & General User & Create & Account & 1-to-1 & Pass & None \\\hline
+	2	 & General User	& User Address Info & Address	& M-to-M	& Pass	& None \\\hline
+	3	 & General User & User Payment Info	& Payment Method	& M-to-M	& Fail & A payment method should be associated with at most one user.  If a payment method can be associated with several users, there could be security issues.\\\hline
+	4	 & General User & Registers	& Mailing List	& M-to-M	& Pass & None \\\hline
+	5	 & General User & Creates	& Order	& 1-to-1	& Fail & A user should be able to order more than once. \\\hline
+	6	 & Registered User & Open Session & Device & 1-to-M	&	Fail & Device can be used by multiple users. \\\hline
+	7	& Device & Logs to & Account & M-to-1 & Fail & Device does not necessarily have to be logged in.  Can't force a device to be logged in. \\\hline
+	8	& Account & Reward Info & Reward & M-to-M & Pass & None\\\hline
+	9	& Account & Receives & Promotion & M-to-M & Pass & None\\\hline
+	10	& Order & Ships to & Shipping Address & 1-to-1 & Fail & A single order should be shipped to at most one shipping address.  To ship to a different address, another order should be generated.  Also, the shipping address does not have to be shipped to by an order.\\\hline
+	11	& Order & Has & Order Details & M-to-M & Fail & A single order should have only one order detail associated with it.  An order detail should be associated with one and only one order.\\\hline
+	12	& Order & Create & Fulfillment action & M-to-M & Pass & None\\\hline
+	13	& Order Details & Payed by & Payment Method & M-to-M & Pass & None\\\hline
+	14	& Order Details & Generate & Receipt & 1-to-1 & Pass & None\\\hline
+	15	& Order Details & Send & Accounting Dept & M-to-M & Fail & Order details must send details to one accounting department.  And Accounting department does not necessarily have to receive details from Order details.\\\hline
+	16	& Order Details & Has & Product & M-to-M & Pass & None\\\hline
+	17	& Fulfillment action & Use & Courier & M-to-M & Fail & A fulfillment action should use at most one courier.\\\hline
+	18	& Fulfillment action & Has & Region & M-to-M & Fail & A fulfillment action should be associated with at most one region\\\hline
+	19	& Region & Has & Warehouse & 1-to-M & Pass & None \\\hline
+	20	& Warehouse & Requests & Inventory & M-to-M & Pass & None \\\hline
+	21	& Warehouse & Requests from & Supplier & M-to-M & Pass & None \\\hline
+	22	& Product & Contains & Inventory & M-to-M & Pass & None \\\hline
+	23	& Product & Has & Category & M-to-M & Pass & None \\\hline
+	24	& Product & Promotion Info & Promotion & M-to-M & Pass & None\\\hline
+	25	& Supplier & Sends & Inventory & M-to-M & Pass & None \\\hline
+	26	& Accounting Dept & Pays & Payees & M-to-M & Pass & The accounting department should not be forced to be paying payees, but payees do not require the accounting department to always be paying them.\\\hline
+\end{longtable}
+\end{spacing}

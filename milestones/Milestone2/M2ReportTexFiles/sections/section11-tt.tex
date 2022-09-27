@@ -1,0 +1,96 @@
+\pagebreak
+\section{Testing Table}
+
+\begin{spacing}{1.25}
+\begin{longtable}{ | p{0.25\linewidth} | p{0.1\linewidth} | p{0.09\linewidth} | p{0.17\linewidth} | p{0.25\linewidth} | }
+\caption{Testing Table}\\
+\hline
+Entity						&	SQLQuery	&	Pass/Fail	&	Error Description				&	Possible Solution\\\hline\endhead
+user						&	DELETE		&	Pass		&	None							&	None				\\\hline
+user						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+address						&	DELETE		&	Pass		&	None							&	None				\\\hline
+address						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+paymentMethod				&	DELETE		&	Pass		&	None							&	None				\\\hline
+paymentMethod				&	UPDATE		&	Pass		&	None							&	None				\\\hline
+shopList					&	DELETE		&	Pass		&	None							&	None				\\\hline
+shopList					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+product						&	DELETE		&	Fail		&	FK constraint fails (restrict)	&	Need to create trigger or procedure to deal with this error\\\hline
+product						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+accountType					&	DELETE		&	Fail		&	FK constraint fails (restrict)	&	Need to create trigger or procedure to deal with this error\\\hline
+accountType					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+feature						&	DELETE		&	Pass		&	None							&	None				\\\hline
+feature						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+category					&	DELETE		&	Pass		&	None							&	None				\\\hline
+category					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+mailingList					&	DELETE		&	Pass		&	None							&	None				\\\hline
+mailingList					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+fulfillmentAction			&	DELETE		&	Pass		&	None							&	None				\\\hline
+fulfillmentAction			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+package						&	DELETE		&	Pass		&	None							&	None				\\\hline
+package						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+courier						&	DELETE		&	Pass		&	None							&	None				\\\hline
+courier						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+region						&	DELETE		&	Fail		&	FK constraint fails (restrict)	&	Need to create trigger or procedure to deal with this error\\\hline
+region						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+inventory					&	DELETE		&	Pass		&	None							&	None				\\\hline
+inventory					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+supplier					&	DELETE		&	Pass		&	None							&	None				\\\hline
+supplier					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+manufacturer				&	DELETE		&	Pass		&	None							&	None				\\\hline
+manufacturer				&	UPDATE		&	Pass		&	None							&	None				\\\hline
+productManufacturers		&	DELETE		&	Pass		&	None							&	None				\\\hline
+productManufacturers		&	UPDATE		&	Pass		&	None							&	None				\\\hline
+session						&	DELETE		&	Pass		&	None							&	None				\\\hline
+session						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+userAddresses				&	DELETE		&	Pass		&	None							&	None				\\\hline
+userAddresses				&	UPDATE		&	Pass		&	None							&	None				\\\hline
+email						&	DELETE		&	Pass		&	None							&	None				\\\hline
+email						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+userShopList				&	DELETE		&	Pass		&	None							&	None				\\\hline
+userShopList				&	UPDATE		&	Pass		&	None							&	None				\\\hline
+shoppingProductList			&	DELETE		&	Pass		&	None							&	None				\\\hline
+shoppingProductList			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+orderDetails				&	DELETE		&	Pass		&	None							&	None				\\\hline
+orderDetails				&	UPDATE		&	Pass		&	None							&	None				\\\hline
+receipt						&	DELETE		&	Pass		&	None							&	None				\\\hline
+receipt						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+account						&	DELETE		&	Pass		&	None							&	None				\\\hline
+account						&	UPDATE		&	Pass		&	None							&	None				\\\hline
+supportedFeature			&	DELETE		&	Pass		&	None							&	None				\\\hline
+supportedFeature			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+userPaymentMethods			&	DELETE		&	Pass		&	None							&	None				\\\hline
+userPaymentMethods			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+paymentInfo					&	DELETE		&	Pass		&	None							&	None				\\\hline
+paymentInfo					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+creditCard					&	DELETE		&	Pass		&	None							&	None				\\\hline
+creditCard					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+bankAccount					&	DELETE		&	Pass		&	None							&	None				\\\hline
+bankAccount					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+productCategories			&	DELETE		&	Pass		&	None							&	None				\\\hline
+productCategories			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+productPromotion			&	DELETE		&	Pass		&	None							&	None				\\\hline
+productPromotion			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+userMailingLists			&	DELETE		&	Pass		&	None							&	None				\\\hline
+userMailingLists			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+orderFulfillment			&	DELETE		&	Pass		&	None							&	None				\\\hline
+orderFulfillment			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+shipment					&	DELETE		&	Pass		&	None							&	None				\\\hline
+shipment					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+packagesForFulfillment		&	DELETE		&	Pass		&	None							&	None				\\\hline
+packagesForFulfillment		&	UPDATE		&	Fail		&	FK constraint fails (set null)	&	Need to create trigger or procedure to deal with this error\\\hline
+actionOrigin				&	DELETE		&	Pass		&	None							&	None				\\\hline
+actionOrigin				&	UPDATE		&	Pass		&	None							&	None				\\\hline
+warehouse					&	DELETE		&	Pass		&	None							&	None				\\\hline
+warehouse					&	UPDATE		&	Pass		&	None							&	None				\\\hline
+productInventory			&	DELETE		&	Pass		&	None							&	None				\\\hline
+productInventory			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+productSuppliers			&	DELETE		&	Pass		&	None							&	None				\\\hline
+productSuppliers			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+warehouseInventoryRequest	&	DELETE		&	Pass		&	None							&	None				\\\hline
+warehouseInventoryRequest	&	UPDATE		&	Pass		&	None							&	None				\\\hline
+warehouseInventory			&	DELETE		&	Pass		&	None							&	None				\\\hline
+warehouseInventory			&	UPDATE		&	Pass		&	None							&	None				\\\hline
+productManufacturers		&	DELETE		&	Pass		&	None							&	None				\\\hline
+productManufacturers		&	UPDATE		&	Pass		&	None							&	None				\\\hline
+\end{longtable}
+\end{spacing}
